@@ -8,32 +8,32 @@
 Summary:	Atomic file writes
 Summary(pl.UTF-8):	Atomowy zapis plików
 Name:		python-atomicwrites
-Version:	1.1.5
+Version:	1.2.1
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/atomicwrites/
 Source0:	https://files.pythonhosted.org/packages/source/a/atomicwrites/atomicwrites-%{version}.tar.gz
-# Source0-md5:	2669c1222f2886cab9a1f1d6370d47da
+# Source0-md5:	9b64377c3f93e9877adc4460e9984f2b
 URL:		https://github.com/untitaker/python-atomicwrites
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
-BuildRequires:	python-modules >= 2
+BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-pytest
 %endif
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3.2
+BuildRequires:	python3-modules >= 1:3.4
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-pytest
 %endif
 %endif
 %{?with_doc:BuildRequires:	sphinx-pdg}
-Requires:	python-modules
+Requires:	python-modules >= 1:2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +47,7 @@ Atomowy zapis plików.
 Summary:	Atomic file writes
 Summary(pl.UTF-8):	Atomowy zapis plików
 Group:		Libraries/Python
-Requires:	python3-modules >= 1:3.2
+Requires:	python3-modules >= 1:3.4
 
 %description -n python3-atomicwrites
 Atomic file writes.
