@@ -8,13 +8,13 @@
 Summary:	Atomic file writes
 Summary(pl.UTF-8):	Atomowy zapis plików
 Name:		python-atomicwrites
-Version:	1.3.0
-Release:	2
+Version:	1.4.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/atomicwrites/
 Source0:	https://files.pythonhosted.org/packages/source/a/atomicwrites/atomicwrites-%{version}.tar.gz
-# Source0-md5:	ce11f780a4ce0fce8a55d64494a88178
+# Source0-md5:	b5cc15c8f9f180a48665f9aacf91d817
 URL:		https://github.com/untitaker/python-atomicwrites
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -74,6 +74,7 @@ Dokumentacja API modułu Pythona atomicwrites.
 %py_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python} -m pytest tests
 %endif
 %endif
@@ -82,6 +83,7 @@ Dokumentacja API modułu Pythona atomicwrites.
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest tests
 %endif
 %endif
