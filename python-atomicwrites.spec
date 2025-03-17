@@ -15,6 +15,7 @@ Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/atomicwrites/
 Source0:	https://files.pythonhosted.org/packages/source/a/atomicwrites/atomicwrites-%{version}.tar.gz
 # Source0-md5:	9ff8e556d0b4a411d0cebbdb3fb0c70d
+Patch0:		sphinx.patch
 URL:		https://github.com/untitaker/python-atomicwrites
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -68,6 +69,7 @@ Dokumentacja API modułu Pythona atomicwrites.
 
 %prep
 %setup -q -n atomicwrites-%{version}
+%patch -P0 -p1
 
 %build
 %if %{with python2}

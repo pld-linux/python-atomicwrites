@@ -1,0 +1,8 @@
+--- atomicwrites-1.4.1/docs/conf.py.orig	2022-07-08 20:30:25.000000000 +0200
++++ atomicwrites-1.4.1/docs/conf.py	2025-03-18 00:41:39.700571714 +0100
+@@ -105,4 +105,4 @@
+ epub_exclude_files = ['search.html']
+ 
+ # Example configuration for intersphinx: refer to the Python standard library.
+-intersphinx_mapping = {'http://docs.python.org/': None}
++intersphinx_mapping = {'python': ('http://docs.python.org/', None)}
